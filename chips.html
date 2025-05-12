@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fresh Potato Chips</title>
+  <link rel="stylesheet" href="./chips.css">  
+</head>
+<body>
+
+
+  <nav>
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('ar')">العربية</button>
+  </nav>
+
+  <header>
+    <h1 id="title">Fresh Potato Chips</h1>
+    <p id="slogan">Crispy. Fresh. Delicious.</p>
+  </header>
+
+  <div class="section" id="about">
+    <h2 id="about-title">About Us</h2>
+    <p id="about-text">
+  <strong>Fried Salty Broasted Potato Chips</strong> are more than just a snack — they’re an experience. Made from hand-picked potatoes, our chips are crispy on the outside, tender on the inside, and packed with bold flavor.
+  <br><br>
+  <strong>Why Choose Us?</strong>
+  <ul style="text-align: left; display: inline-block; margin-top: 10px;">
+    <li>✔ <strong>Low Fat, Big Flavor</strong></li>
+    <li>✔ <strong>High in Fiber</strong></li>
+    <li>✔ <strong>Packed with Potassium & Antioxidants</strong></li>
+    <li>✔ <strong>Zero Compromise</strong></li>
+  </ul>
+  <br>
+  Snack joyfully, guilt-free. Crisp, clean, and crave-worthy.
+</p>
+
+
+  </div>
+
+  <div class="section" id="products">
+    <h2 id="products-title">Our Products</h2>
+
+    <div class="slider-container">
+      <div class="slider">
+        <!-- Original images -->
+        <a href="https://wa.me/971523394001?text=I%20want%20to%20order%20image1"><img src="image/24.jpeg" alt="Chips 1" /></a>
+        <a href="https://wa.me/971523394001?text=I%20want%20to%20order%20image2"><img src="image/1.jpeg" alt="Chips 2" /></a>
+        <a href="https://wa.me/971523394001?text=I%20want%20to%20order%20image3"><img src="image/3.jpeg" alt="Chips 3" /></a>
+        <a href="https://wa.me/971523394001?text=I%20want%20to%20order%20image4"><img src="image/4.jpeg" alt="Chips 4" /></a>
+        <a href="https://wa.me/971523394001?text=I%20want%20to%20order%20image4"><img src="image/6.jpeg" alt="Chips 4" /></a>
+        <a href="https://wa.me/971523394001?text=I%20want%20to%20order%20image5"><img src="image/5.jpeg" alt="Chips 5" /></a>
+
+        <!-- Duplicate for seamless loop -->
+        <a href="#"><img src="image/1.jpeg" alt="" /></a>
+        <a href="#"><img src="image/24.jpeg" alt="" /></a>
+        <a href="#"><img src="image/3.jpeg" alt="" /></a>
+        <a href="#"><img src="image/4.jpeg" alt="" /></a>
+        <a href="#"><img src="image/5.jpeg" alt="" /></a>
+        <a href="#"><img src="image/6.jpeg" alt="" /></a>
+      </div>
+    </div>
+
+    <p id="product-name">Classic Salted Chips</p>
+  </div>
+
+  <div class="section" id="order">
+    <h2 id="order-title">Order Now</h2>
+    <a class="whatsapp-button" href="https://wa.me/971523394001?text=Hello%2C%20I%20want%20to%20order%20fresh%20potato%20chips." target="_blank">
+      WhatsApp Order
+    </a>
+  </div>
+
+  <footer>
+    <p id="contact-title">Contact: +971523394001</p>
+  </footer>
+
+  <script>
+    const content = {
+      en: {
+        title: "Fresh Potato Chips",
+        slogan: "Crispy. Fresh. Delicious.",
+        "about-title": "About Us",
+        "about-text": "", // About section now uses static full content
+        "products-title": "Our Products",
+        "product-name": "Classic Salted Chips",
+        "order-title": "Order Now",
+        "contact-title": "Contact: +971523394001"
+      },
+      ar: {
+        title: "رقائق البطاطس الطازجة",
+        slogan: "مقرمشة. طازجة. لذيذة.",
+        "about-title": "معلومات عنا",
+        "about-text": "نصنع رقائق بطاطس طازجة يدويًا بمكونات طبيعية.",
+        "products-title": "منتجاتنا",
+        "product-name": "رقائق البطاطس المالحة الكلاسيكية",
+        "order-title": "اطلب الآن",
+        "contact-title": "تواصل: +971523394001"
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      for (const id in content[lang]) {
+        if (content[lang][id]) {
+          document.getElementById(id).textContent = content[lang][id];
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
